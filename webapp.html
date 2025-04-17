@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Riddle Generator Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .game-box {
+      position: relative;           /* enable absolute inside */
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px;
+      text-align: center;
+      width: 400px;
+      max-width: 90%;
+      color: #ffffff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Home link styling */
+    .home-link {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 0.9rem;
+      color: #ffffff;
+      background: rgba(0,0,0,0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .home-link:hover {
+      background: rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    #riddle {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    #answer {
+      font-size: 18px;
+      color: #b2ffb2;
+      margin-top: 10px;
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .reveal-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+    .reveal-btn:hover {
+      background-color: #45a049;
+    }
+
+    .play-btn {
+      background-color: #2196f3;
+      color: white;
+    }
+    .play-btn:hover {
+      background-color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-box">
+    <!-- Sleek Home link -->
+    <a href="index.html" class="home-link">Home</a>
+
+    <h1>Riddle Me This 🧠</h1>
+    <div id="riddle">Loading...</div>
+    <div id="answer"></div>
+    <button class="btn reveal-btn" onclick="revealAnswer()">Reveal Answer</button>
+    <button class="btn play-btn" onclick="playAgain()">Play Again</button>
+  </div>
+
+  <script>
+    const riddles = [
+      { question: "What has to be broken before you can use it?", answer: "An egg." },
+      { question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?", answer: "An echo." },
+      { question: "I’m tall when I’m young, and I’m short when I’m old. What am I?", answer: "A candle." },
+      { question: "What month of the year has 28 days?", answer: "All of them." },
+      { question: "What can’t talk but will reply when spoken to?", answer: "An echo." },
+      { question: "The more of me you take, the more you leave behind. What am I?", answer: "Footsteps." },
+      { question: "What gets wetter the more it dries?", answer: "A towel." },
+      { question: "What is full of holes but still holds water?", answer: "A sponge." },
+      { question: "What question can you never answer yes to?", answer: "Are you asleep yet?" },
+      { question: "What goes up but never comes down?", answer: "Your age." }
+    ];
+
+    let currentRiddle = {};
+
+    function getRandomRiddle() {
+      return riddles[Math.floor(Math.random() * riddles.length)];
+    }
+
+    function showRiddle() {
+      currentRiddle = getRandomRiddle();
+      document.getElementById("riddle").textContent = currentRiddle.question;
+      const answerEl = document.getElementById("answer");
+      answerEl.textContent = currentRiddle.answer;
+      answerEl.style.display = "none";
+    }
+
+    function revealAnswer() {
+      const answerEl = document.getElementById("answer");
+      answerEl.style.display = "block";
+      answerEl.style.opacity = 1;
+    }
+
+    function playAgain() {
+      showRiddle();
+    }
+
+    // Start the game
+    showRiddle();
+  </script>
+</body>
+</html>

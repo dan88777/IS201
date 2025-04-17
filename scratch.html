@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharks Scratch Page</title>
+  <style>
+    /* —— CSS: Sleek Oceanic Theme —— */
+    :root {
+      --color-bg: #1e3d59;
+      --color-header: #16213e;
+      --color-section: #0f4c75;
+      --color-text: #f5f5f5;
+      --color-accent: #3282b8;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+    /* Header & Navigation */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color-header);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .nav a {
+      color: var(--color-text);
+      text-decoration: none;
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .nav a:hover {
+      background: var(--color-accent);
+    }
+    /* Main container */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    /* Sections */
+    section {
+      background: var(--color-section);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    section h2 {
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    /* Lists */
+    .lists ol {
+      padding-left: 1.5rem;
+    }
+    .lists ul {
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+    .lists ul li {
+      margin-bottom: 0.5rem;
+    }
+    .anchor-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .anchor-link:hover {
+      color: var(--color-text);
+    }
+    /* Media styling */
+    .photo img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .video iframe,
+    .tableau iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: rgba(245,240,225,0.7);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="top">
+    <h1>Sharks: Masters of the Ocean</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="webapp.html">Riddle</a>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="container">
+
+    <!-- Introduction -->
+    <section class="intro">
+      <h2>Why Sharks Fascinate Me</h2>
+      <p>Sharks have roamed our oceans for over 400 million years, evolving into extraordinary predators with unmatched grace and power.</p>
+    </section>
+
+    <!-- Nested lists + anchor -->
+    <section class="lists">
+      <h2>Shark Highlights</h2>
+      <ol>
+        <li>Popular Species
+          <ul>
+            <li>Great White Shark</li>
+            <li>Hammerhead Shark</li>
+            <li>Whale Shark</li>
+          </ul>
+        </li>
+        <li>Conservation Efforts
+          <ul>
+            <li>Marine Protected Areas</li>
+            <li>Shark Fin Trade Bans</li>
+            <li>Public Education Campaigns</li>
+          </ul>
+        </li>
+      </ol>
+      <p><a class="anchor-link" href="#photo">Jump to Shark Photo ↓</a></p>
+    </section>
+
+    <!-- Image section -->
+    <section id="photo" class="photo">
+      <h2>A Majestic Great White</h2>
+      <img 
+        src="assets/img/greatwhiteswimming.jpg" 
+        alt="Great white in the ocean">
+    </section>
+
+    <!-- Video section -->
+    <section id="video" class="video">
+      <h2>Explore Shark Behavior</h2>
+      <iframe src="https://www.youtube.com/embed/El82kmADNQw"
+              title="National Geographic Shark Documentary"
+              allowfullscreen>
+      </iframe>
+    </section>
+
+    <!-- Tableau embed -->
+    <section class="tableau">
+      <h2>Shifting Currents Dataset</h2>
+      <iframe src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms?:embed=y&:showVizHome=no"
+              title="Tableau Shark Attacks">
+      </iframe>
+    </section>
+  </main>
+
+  <!-- Back to top link -->
+  <div style="text-align: center; margin-bottom: 1.5rem;">
+    <a href="#top" class="anchor-link" style="font-size: 1rem;">↑ Go to Top</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© Dan Shay 2025</p>
+  </footer>
+</body>
+</html>

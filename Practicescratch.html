@@ -1,0 +1,122 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharks Scratch Page</title>
+  <link rel="stylesheet" href="scratch.css">
+</head>
+<body>
+  <!-- Header with navigation -->
+  <div class="header">
+    <h1>Sharks: Masters of the Ocean</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home Page</a>
+      <a href="webapp.html">Coin-Flip</a>
+    </nav>
+  </div>
+
+  <!-- Introduction section -->
+  <div class="intro section">
+    <h2>Why Sharks Fascinate Me</h2>
+    <p>Sharks have roamed the oceans for over 400 million years, making them one of the planet’s most ancient predators.</p>
+  </div>
+
+  <!-- Nested lists with anchor -->
+  <div class="lists section">
+    <h2>Shark Highlights</h2>
+    <ol>
+      <li>Popular Shark Species
+        <ul>
+          <li>Great White Shark</li>
+          <li>Hammerhead Shark</li>
+          <li>Whale Shark</li>
+        </ul>
+      </li>
+      <li>Conservation Efforts
+        <ul>
+          <li>Marine Protected Areas</li>
+          <li>Shark Fin Trade Bans</li>
+          <li>Public Education Campaigns</li>
+        </ul>
+      </li>
+    </ol>
+    <p><a href="#video">Jump to Shark Video</a></p>
+  </div>
+
+  <!-- Equipment section with image -->
+  <div id="image" class="image section">
+    <h2>A Majestic Ocean Image</h2>
+    <img src="https://images.unsplash.com/photo-1530970858479-42379689b7fd?auto=format&fit=crop&w=800&q=80" alt="Shark swimming under water">
+  </div>
+
+  <!-- YouTube video embed -->
+  <div id="video" class="video section">
+    <h2>Explore Shark Behavior</h2>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/1f0zQIRdwd0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Interactive Tableau embed -->
+  <div class="tableau section">
+    <h2>Interactive Tableau: Global Shark Attacks Data</h2>
+    <iframe width="800" height="600" src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms?:embed=y&:showVizHome=no" frameborder="0"></iframe>
+  </div>
+</body>
+</html>
+```
+
+```css
+/* scratch.css */
+
+/* 1. Base styles and background */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  background-color: #1e3d59; /* Ocean blue */
+}
+
+/* 2. Header and navigation */
+.header {
+  background-color: #16213e;
+  padding: 20px;
+  text-align: center;
+}
+.nav-links a {
+  margin: 0 15px;
+  color: #f5f0e1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 3. Section styling */
+.section {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #0f4c75;
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+/* 4. Image styling */
+.image img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border: 3px solid #3282b8;
+}
+
+/* 5. Center media embeds */
+.video-container,
+.tableau {
+  text-align: center;
+}
+
+/* 6. Nested list spacing */
+ol li ul li {
+  margin-bottom: 6px;
+}
+```
